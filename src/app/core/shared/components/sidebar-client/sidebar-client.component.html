@@ -1,0 +1,112 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened>
+
+      <div class="filtros">
+        <span>Filtros</span>
+        <div class="icon"></div>
+      </div>
+
+      <form [formGroup]="formTipos">
+        <div class="tipos">
+          <span>Tipos</span>
+          <mat-radio-group formControlName="selectedOption" aria-label="Select an option">
+            <mat-radio-button value="1">Tours</mat-radio-button>
+            <mat-radio-button value="2">Paquetes</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </form>
+
+
+      <div class="destinos">
+        <span>Destinos</span>
+        <mat-form-field>
+          <mat-select [(value)]="selected">
+            <mat-option value="todos">Todos</mat-option>
+            <mat-option value="arequipa">Arequipa</mat-option>
+            <mat-option value="piura">Piura</mat-option>
+            <mat-option value="cuzco">Cuzco</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <form [formGroup]="formTipos">
+        <div class="categorias">
+          <span>Categorias</span>
+          <mat-radio-group formControlName="selectedOption" aria-label="Select an option">
+            <mat-radio-button value="1">Todos</mat-radio-button>
+            <mat-radio-button value="2">Alimentacion</mat-radio-button>
+            <mat-radio-button value="3">Turismo de playas</mat-radio-button>
+            <mat-radio-button value="4">Turismo cultural</mat-radio-button>
+            <mat-radio-button value="5">Turismo de aventura</mat-radio-button>
+            <mat-radio-button value="6">Turismo de naturaleza</mat-radio-button>
+            <mat-radio-button value="7">Turismo de salud</mat-radio-button>
+            <mat-radio-button value="8">Turismo Experimental</mat-radio-button>
+            <mat-radio-button value="9">Turismo Mistico</mat-radio-button>
+            <mat-radio-button value="10">Turismo Rural</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </form>
+
+
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      <div class="contenedor_body">
+        <div class="barra_lateral"></div>
+        <!-- <router-outlet class="router_outlet"></router-outlet> -->
+
+        <!-- INICIO - MOVER AL COMPONENTE LISTAR TOURS -->
+         <div class="listar_tours">
+
+          <div class="tour">
+            <div class="img_bg" [ngStyle]="{'background-image': 'url(' + imgBG1 + ')'}">              
+              <span class="provincia">Cusco</span>
+              <span class="horas">12 horas</span>
+            </div>
+            <div class="descripcion">
+              <h3>Caminata a la Montaña de 7 Colores</h3>
+              <span class="concepto">Descubre una de las maravillas naturales en la zona sur del Cusco, La montaña de 7 colores. Las coloridas tierras se de...</span>
+              <div class="precio_reserva">
+                <span>S/145.00</span>
+                <button mat-flat-button routerLink="../detalle-tour">Reservar</button>
+              </div>              
+            </div>
+          </div>
+
+          <div class="tour">
+            <div class="img_bg" [ngStyle]="{'background-image': 'url(' + imgBG2 + ')'}">              
+              <span class="provincia">Cusco</span>
+              <span class="horas">14 horas</span>
+            </div>
+            <div class="descripcion">
+              <h3>Caminata a las 7 lagunas de Ausangate</h3>
+              <span class="concepto">La montaña del Ausangate es conocida por ser uno de los Apus (espíritu de la montaña) más importantes de la región ...</span>
+              <div class="precio_reserva">
+                <span>S/169.00</span>
+                <button mat-flat-button routerLink="../detalle-tour">Reservar</button>
+              </div>              
+            </div>
+          </div>
+
+          <div class="tour">
+            <div class="img_bg" [ngStyle]="{'background-image': 'url(' + imgBG3 + ')'}">              
+              <span class="provincia">Cusco</span>
+              <span class="horas">14 horas</span>
+            </div>
+            <div class="descripcion">
+              <h3>Caminata hacia la cordillera Arcoíris de Palccoyo</h3>
+              <span class="concepto">La "Cordillera Arcoiris" se encuentra al sur del Cusco, en la comunidad de Palccoyo. La geografía de este impresionante...</span>
+              <div class="precio_reserva">
+                <span>S/169.00</span>
+                <button mat-flat-button routerLink="../detalle-tour">Reservar</button>
+              </div>              
+            </div>
+          </div>
+
+         </div>
+          <!-- FIN - MOVER AL COMPONENTE LISTAR TOURS -->
+
+      </div>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>

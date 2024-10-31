@@ -1,0 +1,135 @@
+$con-padding-horizontal: 10%;
+$con-padding-vertical: 2%;
+$img-ancho-grande: 550px;
+$img-alto-grande: 360px;
+$img-ancho-pequeno: 288px;
+$img-alto-pequeno: 173px;
+$gap-imagenes: 10px;
+$texto-justificado: justify;
+$p1-font-size: 1rem;
+$p2-font-size: 0.95rem;
+
+* {
+  background-color: #f8f8f8;
+}
+
+.contenedor_img {
+  padding: $con-padding-vertical $con-padding-horizontal;
+
+  .imagenes {
+    display: grid;
+    grid-template-areas:
+      "img1 img2 img3"
+      "img1 img4 img5";
+    gap: $gap-imagenes;
+
+    .img1 {
+      grid-area: img1;
+      width: $img-ancho-grande;
+      height: $img-alto-grande;
+    }
+
+    .img2, .img3, .img4, .img5 {
+      width: $img-ancho-pequeno;
+      height: $img-alto-pequeno;
+    }
+
+    .img2 { grid-area: img2; }
+    .img3 { grid-area: img3; }
+    .img4 { grid-area: img4; }
+    .img5 { grid-area: img5; }
+
+    div {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+    }
+  }
+}
+
+.contenedor_body {
+  position: relative;
+  padding: $con-padding-vertical $con-padding-horizontal;
+  display: grid;
+  grid-template-areas: "detalle calendario";
+  grid-template-columns: 65% auto;
+  gap: 40px;
+
+  // CONTENEDOR DETALLE
+  .detalle {
+    grid-area: detalle;
+
+    .contenedor_texto {
+      grid-area: contenedor_texto;
+
+      // Mixin para sección con .p1 y .p2
+      @mixin section-styles {
+        margin-bottom: 25px;
+
+        .p1 {
+          font-size: $p1-font-size;
+          font-weight: bold;
+          line-height: 1.4;
+          margin-bottom: 15px;
+        }
+
+        .p2 {
+          font-size: $p2-font-size;
+          text-align: $texto-justificado;
+        }
+      }
+
+      .descripcion {
+        @include section-styles;
+        .p1 { font-weight: 300; } // Personalización para esta sección
+      }
+
+      .itinerario,
+      .nivel_dificultad,
+      .debera_llevar,
+      .recomendaciones,
+      .sistemas_seguridad {
+        @include section-styles;
+
+        ul {
+          margin-bottom: 0.2em;
+          padding-left: 1rem;
+
+          li {
+            font-size: $p2-font-size;
+            text-align: $texto-justificado;
+          }
+        }
+      }
+
+      .hora_salida, .recojo, .salida, .retorno {
+        margin-bottom: 20px;
+
+        .p1 {
+          b { font-size: $p1-font-size; }
+          font-size: $p2-font-size;
+        }
+      }
+    }
+  }
+
+  // CALENDARIO
+  .calendario {
+    grid-area: calendario;
+    width: 100%;
+    height: 800px;
+    // border: 2px solid red;
+    padding: 20px;
+    mat-form-field{
+      width: 100%;
+    }
+
+    .btn_reservar{
+      color: white;
+      font-weight: bold;
+      background-color: red;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,151 @@
+mat-sidenav {
+  width: 320px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+mat-sidenav-container {
+  background-color: #f4f4f4;
+  height: 100%;
+  padding-left: 13%;
+  padding-right: 13%;
+
+  .filtros {
+    span {
+      color: black;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f4f4f4;
+  }
+
+  .tipos,
+  .categorias {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f4f4f4;
+    span {
+      color: black;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    mat-radio-group {
+      padding-top: 10px;
+      align-items: normal !important;
+      display: flex;
+      flex-direction: column; // Esto coloca los divs uno debajo del otro
+      align-items: center; // Opcional: centra los divs horizontalmente
+      mat-radio-button {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .categorias {
+    border-bottom: none;
+  }
+
+  .destinos {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f4f4f4;
+    span {
+      color: black;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    mat-form-field {
+      padding-top: 10px;
+    }
+  }
+}
+
+mat-sidenav-content {
+  color: black;
+}
+
+//INICIO - MOVER AL COMPONENTE LISTAR TOURS
+.listar_tours {
+  margin: 30px;
+  display: grid;
+  grid-gap: 30px; // Espaciado entre los tours
+
+  .tour {
+    padding: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Sombra suave
+    background-color: white;
+
+    display: grid;
+    grid-template-areas: "img_bg descripcion";
+    grid-template-columns: 40% 60%; // Ajuste del tamaño de las columnas
+    gap: 20px;
+
+    .img_bg {
+      position: relative;
+      background-size: cover; // Para que la imagen cubra todo el espacio
+      background-position: center;
+      grid-area: img_bg;
+      height: 200px; // Ajusta la altura según necesites
+      .provincia {
+        color: white;
+        font-weight: bold;
+        background-color: #ff152c;
+        font-size: 1.2em;
+      }
+      .horas {
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: white;
+        color: #74a745;
+        font-size: 1.2em;
+      }
+    }
+
+    .descripcion {
+      grid-area: descripcion;
+      padding: 10px;
+      padding-right: 15px;
+      h3 {
+        color: #ff152c;
+        font-weight: 600;
+        font-size: 1.25rem;
+      }
+      .concepto {
+        text-align: justify;
+        margin-bottom: 15px;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        unicode-bidi: isolate;
+        font-size: 1.2em;
+        line-height: 1.5;
+        color: #555;
+      }
+      .precio_reserva{
+        margin-top: 30px;
+        display: flex; // Activar flexbox para organizar los elementos en línea
+        justify-content: space-between; // Espaciar el precio y el botón
+        align-items: center; // Centrar verticalmente los elementos dentro del contenedor
+        span{
+          color: #ff152c;
+          font-size: 22px;
+          font-weight: bold;
+        }
+        button {
+          background-color: #ff152c;
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+//FIN - MOVER AL COMPONENTE LISTAR TOURS

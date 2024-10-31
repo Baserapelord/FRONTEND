@@ -1,0 +1,82 @@
+<app-wrapper
+  [imagenBg]="'../../../../../assets/imgs/otro-destino.jpg'"
+  [titulo]="'Tours'"
+  [descripcion]="'Los mejores Tours en los encuentras con nosotros, somos operadores con años de experiencia y calidad <br> garantizada. Viaja, vive y disfruta con aventuras.pe'"
+></app-wrapper>
+
+<div class="contenedor_img">
+  <div class="imagenes">
+    <div class="img1" [ngStyle]="{'background-image': 'url(' + img1 + ')'}"></div>
+    <div class="img2" [ngStyle]="{'background-image': 'url(' + img2 + ')'}"></div>
+    <div class="img3" [ngStyle]="{'background-image': 'url(' + img3 + ')'}"></div>
+    <div class="img4" [ngStyle]="{'background-image': 'url(' + img4 + ')'}"></div>
+    <div class="img5" [ngStyle]="{'background-image': 'url(' + img5 + ')'}"></div>
+  </div>
+</div>
+
+
+<div class="contenedor_body">
+  <div class="detalle">
+    <div class="contenedor_texto">
+      <div class="descripcion">
+        <p [innerHTML]="descripcion1" class="p1"></p>
+        <p [innerHTML]="descripcion2" class="p2"></p>
+      </div>
+      <div class="itinerario">
+        <p class="p1">Itenerario:</p>
+        <p [innerHTML]="itinerario" class="p2"></p>
+      </div>
+      <div class="nivel_dificultad">
+        <p class="p1">Nivel de Dificultad:</p>
+        <p [innerHTML]="nivelDificultad" class="p2"></p>
+      </div>
+      <div class="debera_llevar">
+        <p class="p1">Deber&aacute; llevar:</p>
+        <ul *ngFor="let item of deberaLlevar">
+          <li>{{ item }}</li>
+        </ul>
+      </div>
+      <div class="recomendaciones">
+        <p class="p1">Recomendaciones:</p>
+        <ul *ngFor="let item of recomendaciones">
+          <li>{{ item }}</li>
+        </ul>
+      </div>
+      <div class="hora_salida">
+        <p class="p1"><b>Hora salida: </b>{{ horaSalida }}</p>
+      </div>
+      <div class="recojo">
+        <p class="p1"><b>Recojo: </b>{{ recojo }}</p>
+      </div>
+      <div class="salida">
+        <p class="p1"><b>Salida: </b>{{ salida }}</p>
+      </div>
+      <div class="retorno">
+        <p class="p1"><b>Retorno: </b>{{ retorno }}</p>
+      </div>
+      <div class="sistemas_seguridad">
+        <p class="p1">Sistema de Seguridad:</p>
+        <ul *ngFor="let item of sistemasSeguridad">
+          <li>{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="calendario">
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <button class="btn_reservar" mat-flat-button>Reservar</button>
+
+  </div>
+
+</div>
+
+
+<app-footer></app-footer>

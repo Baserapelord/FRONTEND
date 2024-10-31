@@ -1,0 +1,28 @@
+<div class="contenedor" [ngStyle]="{'background-image': 'url(' + imagenBg + ')'}">
+    <div class="linea"></div>
+    <h1 class="titulo">{{ titulo }}</h1>
+    <div class="descripcion" [innerHTML]="descripcion"></div>
+    <div class="contenedor_interno">
+        <div class="clientes">
+            <div class="icon"></div>
+            <div class="textos">
+                <span>Clientes</span>
+                <span>+50000</span>
+            </div>
+        </div>
+        <div class="servicios_brindados">
+            <div class="icon"></div>
+            <div class="textos">
+                <span>Servicios Brindados</span>
+                <span>+20 000</span>
+            </div>
+        </div>
+        <div class="destinos_peru">
+            <div class="icon"></div>
+            <div class="textos">
+                <span>Destinos en Perú</span>
+                <span>+10</span>
+            </div>
+        </div>
+    </div>
+</div>

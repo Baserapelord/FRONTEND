@@ -1,0 +1,106 @@
+* {
+    color: white;
+  }
+  
+  .contenedor {
+    height: 400px;
+    padding-top: 100px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative; // Para posicionar el pseudo-elemento correctamente
+  
+    // Estilos de fondo
+    background-size: cover; // Asegura que la imagen cubra todo el contenedor
+    background-position: center; // Centra la imagen de fondo
+  
+    &::before {
+      content: ""; // Crea un pseudo-elemento
+      position: absolute; // Posiciona el pseudo-elemento sobre el contenedor
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4); // Color negro con opacidad (ajusta según tus necesidades)
+      z-index: 0; // Asegúrate de que el pseudo-elemento esté detrás del contenido
+    }
+  
+    .linea {
+      position: absolute;
+      top: 30%; // Mueve la línea un 30% hacia abajo
+      left: 50%; // Mueve la línea a la mitad horizontalmente
+      transform: translate(-50%, -50%); // Ajusta la posición de la línea
+      height: 3px;
+      width: 5%;
+      background-color: red;
+      margin: 0 auto;
+      z-index: 1; // Asegúrate de que la línea esté delante
+    }
+  
+    .titulo {
+      margin-top: 2.5%;
+      text-align: center;
+      font-size: 3em;
+      font-weight: bold;
+      position: relative; // Asegura que el texto esté en el frente
+      z-index: 1; // Asegúrate de que el título esté delante
+    }
+  
+    .descripcion {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      position: relative; // Asegura que el texto esté en el frente
+      z-index: 1; // Asegúrate de que la descripción esté delante
+    }
+  
+    .contenedor_interno {
+      display: flex; // Cambiar a flex para centrar
+      justify-content: center; // Centra los elementos horizontalmente
+      align-items: center; // Centra los elementos verticalmente
+      gap: 200px; // Espaciado entre los elementos
+      padding-top: 50px;
+      position: relative; // Asegura que el contenido esté en el frente
+      z-index: 1; // Asegúrate de que los elementos internos estén delante
+  
+      .clientes,
+      .servicios_brindados,
+      .destinos_peru {
+        display: flex;
+        align-items: center;
+        justify-content: center; // Centra el contenido dentro de cada div
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1; // Asegúrate de que los elementos internos estén delante
+  
+        .icon {
+          width: 40px;
+          height: 40px;
+          background-color: #ccc;
+          margin-right: 10px;
+          flex-shrink: 0;
+        }
+  
+        .textos {
+          display: flex;
+          flex-direction: column;
+          align-items: center; // Centra los textos dentro del div
+  
+          span:first-child {
+            font-weight: bold;
+            font-size: 1.4em;
+          }
+  
+          span:last-child {
+            font-weight: bold;
+            font-size: 1.4em;
+            padding-top: 10px;
+          }
+        }
+      }
+
+      i{
+        color: white;
+      }
+    }
+  }
+  
